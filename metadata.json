@@ -1,0 +1,6 @@
+{
+  "name": "Harma Company for IT Systems",
+  "description": "Enterprise B2B SaaS & Hospitality ERP for Saudi Arabia. Creators of Mudabbir Hospitality ERP and Khetat configurable business platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-primary: #765a4c;
+    --brand-primary-950: #231914;
+    --brand-primary-900: #35261f;
+    --brand-primary-800: #4a362c;
+    --brand-primary-700: #5f473c;
+    --brand-primary-600: #765a4c;
+    --brand-primary-500: #8c6e5e;
+    --brand-primary-400: #a78a7b;
+    --brand-primary-300: #c5b0a3;
+    --brand-primary-200: #dfd4cc;
+    --brand-primary-100: #efe8e3;
+    --brand-primary-50: #f9f6f4;
+    --brand-white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html[dir="rtl"] {
+    font-family: 'Alexandria', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+.font-heading {
+  font-family: inherit;
+}
+
+html[dir="rtl"] .font-heading {
+  font-family: 'Alexandria', 'Montserrat', sans-serif;
+}
+
+html[dir="ltr"] .font-heading {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom scrollbar matching Taupe Brown theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f9f6f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5b0a3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #765a4c;
+}
