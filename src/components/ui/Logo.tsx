@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 
 interface LogoProps {
@@ -13,64 +13,37 @@ export const Logo: React.FC<LogoProps> = ({
   showSubtitle = true 
 }) => {
   const { lang, navigateTo } = useLanguage();
-  const [imageError, setImageError] = useState(false);
   const isLight = variant === 'light';
 
   return (
     <div 
       onClick={() => navigateTo('home')}
-      className={`inline-flex items-center gap-3 cursor-pointer select-none group transition-opacity duration-150 hover:opacity-90 ${className}`}
+      className={`inline-flex items-center gap-3 cursor-pointer select-none group transition-opacity duration-150 hover:opacity-95 ${className}`}
       role="button"
       tabIndex={0}
       aria-label="Harma IT Systems Home"
     >
-      {/* 1. If an uploaded logo image is available (e.g. /legal name logo.png or /logo.png), attempt to display it */}
-      {!imageError && (
-        <img 
-          src="/legal name logo.png" 
-          alt={lang === 'ar' ? 'شعار شركة هارما' : 'Harma Company Logo'} 
-          className="h-10 w-auto object-contain shrink-0" 
-          onError={() => setImageError(true)} 
-        />
-      )}
-
-      {/* 2. Refined Geometric Symbol for Harma (shown if imageError is true or before image loads) */}
-      {imageError && (
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center relative shadow-sm border transition-transform duration-200 group-hover:scale-105 shrink-0 ${
+      {/* Official Harma Geometric Emblem (Transparent Background) */}
+      <div 
+        className={`w-10 h-10 rounded-xl flex items-center justify-center relative shadow-xs transition-transform duration-200 group-hover:scale-105 shrink-0 ${
           isLight 
-            ? 'bg-[#ffffff] border-[#efe8e3] text-[#765a4c]' 
-            : 'bg-[#765a4c] border-[#5f473c] text-[#ffffff]'
-        }`}>
-          <svg 
-            viewBox="0 0 32 32" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="w-6 h-6"
-          >
-            {/* Architectural Chevron / Modern Monogram H */}
-            <path 
-              d="M8 24V8L16 14L24 8V24" 
-              stroke="currentColor" 
-              strokeWidth="2.75" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-            />
-            <path 
-              d="M12 18H20" 
-              stroke="currentColor" 
-              strokeWidth="2.5" 
-              strokeLinecap="round" 
-              opacity="0.8" 
-            />
-            <circle 
-              cx="16" 
-              cy="7" 
-              r="1.75" 
-              fill="currentColor" 
-            />
-          </svg>
-        </div>
-      )}
+            ? 'bg-[#ffffff]/15 border border-[#ffffff]/25 text-[#ffffff]' 
+            : 'bg-[#765a4c] border border-[#5f473c]/30 text-[#ffffff]'
+        }`}
+      >
+        <svg 
+          viewBox="185.0 219.8 588.4 588.4" 
+          fill="currentColor" 
+          className="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          {/* Exact 3-fold geometric origami ribbon triskelion */}
+          <polygon points="295.0,320.0 570.0,320.0 500.72,440.0 460.0,510.0 200.0,472.0 410.0,472.0 467.74,372.0 325.0,372.0" />
+          <polygon points="758.38,412.46 620.88,650.62 551.6,530.62 511.34,460.36 674.25,254.19 569.25,436.06 626.98,536.06 698.35,412.45" />
+          <polygon points="446.62,767.54 309.12,529.38 447.68,529.38 528.66,529.64 625.75,773.81 520.75,591.94 405.28,591.94 476.65,715.55" />
+        </svg>
+      </div>
 
       {/* Brand Text */}
       <div className="flex flex-col text-start">
